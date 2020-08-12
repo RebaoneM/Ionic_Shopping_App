@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Shopping List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-input placeholder="Please enter an item" style="text-align: center;" [(ngModel)] = "item"></ion-input>
+
+  </ion-item>
+  <ion-item>
+  <ion-button id = "bttn" (click)="addTodo()" > Add </ion-button>
+  <!--<ion-button  (click)="update()" > Update </ion-button> -->
+</ion-item>
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-list-header> </ion-list-header>
+  <ion-item *ngFor="let item of list; let i = index">
+    <ion-badge slot = "start"> {{i + 1}} </ion-badge>
+    <ion-label> {{item.shoppingItem}} </ion-label>
+    <ion-badge slot = "end"> <ion-icon name = "trash"  (click)="delete(i)" color = danger > </ion-icon></ion-badge>
+
+  </ion-item>
+
+  
+</ion-content>
